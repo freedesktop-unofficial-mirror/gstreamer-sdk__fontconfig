@@ -2,7 +2,7 @@
 <HTML
 ><HEAD
 ><TITLE
->FcLangSetGetLangs</TITLE
+>FcLangSetUnion</TITLE
 ><META
 NAME="GENERATOR"
 CONTENT="Modular DocBook HTML Stylesheet Version 1.79"><LINK
@@ -10,13 +10,13 @@ REL="HOME"
 HREF="t1.html"><LINK
 REL="UP"
 TITLE="FcLangSet"
-HREF="x102.html#AEN2066"><LINK
+HREF="x102.html#AEN2094"><LINK
 REL="PREVIOUS"
-TITLE="FcLangSetHasLang"
-HREF="fclangsethaslang.html"><LINK
+TITLE="FcLangSetDel"
+HREF="fclangsetdel.html"><LINK
 REL="NEXT"
-TITLE="FcGetLangs"
-HREF="fcgetlangs.html"></HEAD
+TITLE="FcLangSetSubtract"
+HREF="fclangsetsubtract.html"></HEAD
 ><BODY
 CLASS="REFENTRY"
 BGCOLOR="#FFFFFF"
@@ -44,7 +44,7 @@ WIDTH="10%"
 ALIGN="left"
 VALIGN="bottom"
 ><A
-HREF="fclangsethaslang.html"
+HREF="fclangsetdel.html"
 ACCESSKEY="P"
 >&#60;&#60;&#60; Previous</A
 ></TD
@@ -58,7 +58,7 @@ WIDTH="10%"
 ALIGN="right"
 VALIGN="bottom"
 ><A
-HREF="fcgetlangs.html"
+HREF="fclangsetsubtract.html"
 ACCESSKEY="N"
 >Next &#62;&#62;&#62;</A
 ></TD
@@ -69,21 +69,21 @@ ALIGN="LEFT"
 WIDTH="100%"></DIV
 ><H1
 ><A
-NAME="FCLANGSETGETLANGS"
+NAME="FCLANGSETUNION"
 ></A
->FcLangSetGetLangs</H1
+>FcLangSetUnion</H1
 ><DIV
 CLASS="REFNAMEDIV"
 ><A
-NAME="AEN2300"
+NAME="AEN2220"
 ></A
 ><H2
 >Name</H2
->FcLangSetGetLangs&nbsp;--&nbsp;get the list of languages in the langset</DIV
+>FcLangSetUnion&nbsp;--&nbsp;Add langsets</DIV
 ><DIV
 CLASS="REFSYNOPSISDIV"
 ><A
-NAME="AEN2303"
+NAME="AEN2223"
 ></A
 ><H2
 >Synopsis</H2
@@ -92,7 +92,7 @@ CLASS="FUNCSYNOPSIS"
 ><P
 ></P
 ><A
-NAME="AEN2304"
+NAME="AEN2224"
 ></A
 ><TABLE
 BORDER="0"
@@ -111,14 +111,19 @@ CLASS="FUNCSYNOPSISINFO"
 ><CODE
 ><CODE
 CLASS="FUNCDEF"
->FcStrSet * <TT
+>FcLangSet * <TT
 CLASS="FUNCTION"
->FcLangSetGetLangs</TT
+>FcLangSetUnion</TT
 ></CODE
 >(const FcLangSet *<TT
 CLASS="PARAMETER"
 ><I
->ls</I
+>ls_a</I
+></TT
+>, const FcLangSet *<TT
+CLASS="PARAMETER"
+><I
+>ls_b</I
 ></TT
 >);</CODE
 ></P
@@ -129,15 +134,20 @@ CLASS="PARAMETER"
 ><DIV
 CLASS="REFSECT1"
 ><A
-NAME="AEN2311"
+NAME="AEN2233"
 ></A
 ><H2
 >Description</H2
 ><P
->Returns a string set of all languages in <TT
+>Returns a set including only those languages found in either <TT
 CLASS="PARAMETER"
 ><I
->langset</I
+>ls_a</I
+></TT
+> or <TT
+CLASS="PARAMETER"
+><I
+>ls_b</I
 ></TT
 >.
 	    </P
@@ -145,12 +155,12 @@ CLASS="PARAMETER"
 ><DIV
 CLASS="REFSECT1"
 ><A
-NAME="AEN2315"
+NAME="AEN2238"
 ></A
 ><H2
 >Version</H2
 ><P
->Fontconfig version 2.8.0
+>Fontconfig version 2.10.1
 
 	    </P
 ></DIV
@@ -170,7 +180,7 @@ WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
 ><A
-HREF="fclangsethaslang.html"
+HREF="fclangsetdel.html"
 ACCESSKEY="P"
 >&#60;&#60;&#60; Previous</A
 ></TD
@@ -188,7 +198,7 @@ WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
 ><A
-HREF="fcgetlangs.html"
+HREF="fclangsetsubtract.html"
 ACCESSKEY="N"
 >Next &#62;&#62;&#62;</A
 ></TD
@@ -198,13 +208,13 @@ ACCESSKEY="N"
 WIDTH="33%"
 ALIGN="left"
 VALIGN="top"
->FcLangSetHasLang</TD
+>FcLangSetDel</TD
 ><TD
 WIDTH="34%"
 ALIGN="center"
 VALIGN="top"
 ><A
-HREF="x102.html#AEN2066"
+HREF="x102.html#AEN2094"
 ACCESSKEY="U"
 >Up</A
 ></TD
@@ -212,7 +222,7 @@ ACCESSKEY="U"
 WIDTH="33%"
 ALIGN="right"
 VALIGN="top"
->FcGetLangs</TD
+>FcLangSetSubtract</TD
 ></TR
 ></TABLE
 ></DIV
