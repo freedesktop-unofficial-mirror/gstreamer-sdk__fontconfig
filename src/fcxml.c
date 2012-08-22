@@ -1212,7 +1212,9 @@ FcParseInt (FcConfigParse *parse)
 static double
 FcStrtod (char *s, char **end)
 {
+#ifndef __BIONIC__
     struct lconv    *locale_data;
+#endif
     char	    *dot;
     double	    v;
 
@@ -1220,6 +1222,7 @@ FcStrtod (char *s, char **end)
      * Have to swap the decimal point to match the current locale
      * if that locale doesn't use 0x2e
      */
+#ifndef __BIONIC__
     if ((dot = strchr (s, 0x2e)) &&
 	(locale_data = localeconv ()) &&
 	(locale_data->decimal_point[0] != 0x2e ||
@@ -1256,6 +1259,7 @@ FcStrtod (char *s, char **end)
 	}
     }
     else
+#endif
 	v = strtod (s, end);
     return v;
 }
